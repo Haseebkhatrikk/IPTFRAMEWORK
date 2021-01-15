@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IPTframeworkModelStoreContainer" CdmEntityContainer="IPTServerEntities">
+    <EntitySetMapping Name="Hospitals">
+      <EntityTypeMapping TypeName="IPTframeworkModel.Hospital">
+        <MappingFragment StoreEntitySet="Hospital">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+          <ScalarProperty Name="HospitalIncharge" ColumnName="HospitalIncharge" />
+          <ScalarProperty Name="HospitalAddress" ColumnName="HospitalAddress" />
+          <ScalarProperty Name="HospitalNumber" ColumnName="HospitalNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicines">
+      <EntityTypeMapping TypeName="IPTframeworkModel.Medicine">
+        <MappingFragment StoreEntitySet="Medicine">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MedicineTime" ColumnName="MedicineTime" />
+          <ScalarProperty Name="MedicinePrice" ColumnName="MedicinePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="IPTframeworkModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treatments">
+      <EntityTypeMapping TypeName="IPTframeworkModel.Treatment">
+        <MappingFragment StoreEntitySet="Treatment">
+          <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
+          <ScalarProperty Name="HospitalId" ColumnName="HospitalId" />
+          <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

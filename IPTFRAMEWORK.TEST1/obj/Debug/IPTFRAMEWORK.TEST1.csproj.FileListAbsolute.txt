@@ -1,0 +1,15 @@
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\obj\Debug\IPTFRAMEWORK.TEST1.csproj.CoreCompileInputs.cache
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\IPTFRAMEWORK.TEST1.exe.config
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\IPTFRAMEWORK.TEST1.exe
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\IPTFRAMEWORK.TEST1.pdb
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\EntityFramework.dll
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\IPTFRAMEWORK.dll
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\IPTFRAMEWORK.pdb
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\IPTFRAMEWORK.dll.config
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\EntityFramework.xml
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\obj\Debug\IPTFRAMEWORK.TEST1.csprojAssemblyReference.cache
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\obj\Debug\IPTFRAMEWORK.TEST1.csproj.CopyComplete
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\obj\Debug\IPTFRAMEWORK.TEST1.exe
+C:\Users\Haseeb\source\repos\IPTFRAMEWORK\IPTFRAMEWORK.TEST1\obj\Debug\IPTFRAMEWORK.TEST1.pdb

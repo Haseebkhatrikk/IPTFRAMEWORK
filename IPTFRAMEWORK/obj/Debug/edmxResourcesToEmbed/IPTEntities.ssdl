@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IPTframeworkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospitalName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="HospitalIncharge" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="HospitalAddress" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HospitalNumber" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MedicineTime" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MedicinePrice" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'IPTframework.dbo.Treatment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Treatment">
+    <Key>
+      <PropertyRef Name="Diagnose" />
+      <PropertyRef Name="HospitalId" />
+      <PropertyRef Name="MedicineName" />
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="Diagnose" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="HospitalId" Type="int" Nullable="false" />
+    <Property Name="MedicineName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="PatientId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Treatment_Hospital">
+    <End Role="Hospital" Type="Self.Hospital" Multiplicity="1" />
+    <End Role="Treatment" Type="Self.Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospital">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Treatment">
+        <PropertyRef Name="HospitalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treatment_Medicine">
+    <End Role="Medicine" Type="Self.Medicine" Multiplicity="1" />
+    <End Role="Treatment" Type="Self.Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medicine">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Treatment">
+        <PropertyRef Name="MedicineName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treatment_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="Treatment" Type="Self.Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Treatment">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IPTframeworkModelStoreContainer">
+    <EntitySet Name="Hospital" EntityType="Self.Hospital" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicine" EntityType="Self.Medicine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Treatment" EntityType="Self.Treatment" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Treatment].[Diagnose] AS [Diagnose], 
+    [Treatment].[HospitalId] AS [HospitalId], 
+    [Treatment].[MedicineName] AS [MedicineName], 
+    [Treatment].[PatientId] AS [PatientId]
+    FROM [dbo].[Treatment] AS [Treatment]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Treatment_Hospital" Association="Self.FK_Treatment_Hospital">
+      <End Role="Hospital" EntitySet="Hospital" />
+      <End Role="Treatment" EntitySet="Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treatment_Medicine" Association="Self.FK_Treatment_Medicine">
+      <End Role="Medicine" EntitySet="Medicine" />
+      <End Role="Treatment" EntitySet="Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treatment_Patient" Association="Self.FK_Treatment_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Treatment" EntitySet="Treatment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
